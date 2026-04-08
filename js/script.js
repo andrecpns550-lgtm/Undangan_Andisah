@@ -32,31 +32,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-// =================== COUNTDOWN ===================
-document.addEventListener("DOMContentLoaded", function () {
-  const eventDate = new Date(2026, 5, 6, 8, 0, 0); // 6 Juni 2026
-
-  function updateCountdown() {
-    const now = new Date();
-    const gap = eventDate - now;
-
-    if (gap <= 0) return;
-
-    const days = Math.floor(gap / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((gap / (1000 * 60 * 60)) % 24);
-    const minutes = Math.floor((gap / (1000 * 60)) % 60);
-    const seconds = Math.floor((gap / 1000) % 60);
-
-    document.getElementById("days").innerText = days;
-    document.getElementById("hours").innerText = hours;
-    document.getElementById("minutes").innerText = minutes;
-    document.getElementById("seconds").innerText = seconds;
-  }
-
-  updateCountdown();
-  setInterval(updateCountdown, 1000);
-});
-
 
 // =================== GALLERY SLIDE ===================
 document.addEventListener("DOMContentLoaded", function () {
@@ -318,13 +293,6 @@ function closeGift() {
 
 
 /// ================= HADIAH =================
-function openGift() {
-  document.getElementById("giftPopup").style.display = "flex";
-}
-
-function closeGift() {
-  document.getElementById("giftPopup").style.display = "none";
-}
 
 function openGift(){
   document.getElementById('giftPopup').style.display = 'flex';
@@ -351,24 +319,12 @@ function copyRek(id){
 }
 
 
-// ================= ANIMASI SCROLL =================
-document.addEventListener("DOMContentLoaded", function () {
-  const elements = document.querySelectorAll(".fade-up");
+function openGift() {
+  const popup = document.getElementById("giftPopup");
+  popup.style.display = "flex";
+  popup.style.opacity = "0";
 
-  function showOnScroll() {
-    const triggerBottom = window.innerHeight * 0.85;
-
-    elements.forEach(el => {
-      const boxTop = el.getBoundingClientRect().top;
-
-      if (boxTop < triggerBottom) {
-        el.classList.add("show");
-      }
-    });
-  }
-
-  window.addEventListener("scroll", showOnScroll);
-
-  // trigger awal
-  showOnScroll();
-});
+  setTimeout(() => {
+    popup.style.opacity = "1";
+  }, 10);
+}
