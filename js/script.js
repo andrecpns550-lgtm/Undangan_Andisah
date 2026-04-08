@@ -281,24 +281,19 @@ fetch(URL_SCRIPT)
 });
 
 
-// ================= HADIAH =================
-function openGift() {
-  document.getElementById("giftPopup").style.display = "flex";
-}
-
-function closeGift() {
-  document.getElementById("giftPopup").style.display = "none";
-}
 
 
 
 /// ================= HADIAH =================
 
-function openGift(){
-  document.getElementById('giftPopup').style.display = 'flex';
+function openGift() {
+  document.getElementById("giftPopup").style.display = "flex";
+  document.body.style.overflow = "hidden";
 }
-function closeGift(){
-  document.getElementById('giftPopup').style.display = 'none';
+
+function closeGift() {
+  document.getElementById("giftPopup").style.display = "none";
+  document.body.style.overflow = "auto";
 }
 
 function copyRek(id){
