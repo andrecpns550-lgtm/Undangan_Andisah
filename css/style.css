@@ -347,7 +347,17 @@ body {
   left: 110%;
 }
 
-/* Kotak tanggal */
+/* Musik */
+
+#musicBtn {
+  position: fixed;
+  top: 20px;
+
+  left: 50%;
+  transform: translateX(140px); /* geser sesuai lebar card */
+
+  z-index: 9999;
+}
 
 #musicBtn {
   position: absolute;
