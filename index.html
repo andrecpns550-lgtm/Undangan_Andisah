@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8">
@@ -11,43 +10,528 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <!-- CSS External -->
   <link rel="stylesheet" href="css/style.css">
+  
 </head>
 
 <body>
 
-<div class="container d-flex justify-content-center align-items-center min-vh-100">
+<div id="coverPage">
 
-  <div class="invitation-card">
+  <!-- ISI COVER KAMU (index.html) -->
+  <div class="container d-flex justify-content-center align-items-center min-vh-100">
 
-    <img src="img/andre.png" alt="Wedding" class="bg-cs">
+    <div class="invitation-card">
+      <img src="img/andre.png" class="bg-cs">
+      <div class="overlay"></div>
 
-    <div class="overlay"></div>
+      <div class="content">
+        <div class="top-text">
+          <small>The Wedding Of</small>
+          <div class="names">Andre &<br>Isah</div>
+        </div>
 
-    <div class="content">
+        <div class="bottom">
+          <p>Kepada Yth.</p>
+          <p>Bapak/Ibu/Saudara/i</p>
+          <div class="guest">Tamu</div>
 
-      <div class="top-text">
-        <small>The Wedding Of</small>
-        <div class="names">Andre &<br>Isah</div>
+          <button class="btn btn-invite" onclick="openInvite()">
+            Buka Undangan
+          </button>
+        </div>
       </div>
-
-      <div class="bottom">
-        <p>Kepada Yth.</p>
-        <p>Bapak/Ibu/Saudara/i</p>
-        <div class="guest">Tamu</div>
-
-        <button class="btn btn-invite" onclick="openInvite()">
-          Buka Undangan
-        </button>
-      </div>
-
     </div>
 
   </div>
 
 </div>
 
-<script src="js/script.js"></script>
+<!-- ✅ SECTION 2: HOME (ISI UNDANGAN) -->
+  <div id="homePage" style="display:none;">
+    <!-- ⬇️ PASTE SEMUA isi home.html kamu di sini -->
+
+    <div id="toast"></div>
+<div class="container d-flex justify-content-center">
+
+  <div class="invitation-card">
+
+    <div class="card-main">
+      
+        <button id="musicBtn" onclick="toggleMusic()">▶️</button>
+
+<audio id="bgMusic" loop>
+  <source src="audio/musik.mp3" type="audio/mpeg">
+</audio>
+
+
+      <img src="img/MLK00653.jpg" class="bg">
+      
+
+      <div class="overlay"> 
+
+      </div>
+
+
+
+
+
+      </div>
+
+      <div class="content-bg">
+
+<div class="wedding-header fade-up">
+  <p class="wedding-sub">The Wedding Of</p>
+  <h2 class="wedding-names">Andre & Isah</h2>
+
+  <div class="wedding-date">
+    <span>JUNI</span>
+    <div class="date-box">06</div>
+    <span>2026</span>
+  </div>
+</div>
+
+<button onclick="openPopup('calendarPopup')" class="save-btn">
+  SAVE THE DATE  
+</button>
+
+  
+
+<div id="calendarPopup" class="calendar-popup">
+  <div class="calendar-box">
+
+    <span class="close-btn" onclick="closePopup('calendarPopup')">✖</span>
+
+    <h4 class="cal-title">Simpan Tanggal</h4>
+    <p class="cal-sub">Tambahkan ke kalender Anda</p>
+
+    <button class="cal-btn google" onclick="saveToGoogleCalendar()">
+      📅 Google Calendar
+    </button>
+
+    <button class="cal-btn apple" onclick="openICS()">
+      🍎 Apple / iPhone
+    </button>
+
+  </div>
+</div>
+
+
+
+        <div class="countdown text-center d-flex justify-content-center gap-2 fade-up delay-1">
+
+          <div class="time-box">
+            <span id="days">0</span>
+            <small>Days</small>
+          </div>
+
+          <div class="time-box">
+            <span id="hours">0</span>
+            <small>Hours</small>
+          </div>
+
+          <div class="time-box">
+            <span id="minutes">0</span>
+            <small>Minutes</small>
+          </div>
+
+          <div class="time-box">
+            <span id="seconds">0</span>
+            <small>Seconds</small>
+          </div>
+
+        </div>
+
+        <div class="section-bottom text-center fade-up delay-2">
+          <p class="verse">
+            “Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang.”
+          </p>
+          <small class="verse-ref">QS. Ar-Rum : 21</small>
+
+          
+
+        </div>
+            <!--galery Berjalan -->
+            <!--
+        <div class="gallery mt-4">
+            <div class="gallery-track d-flex">
+              <img src="Img/andisah1.jpeg">
+              <img src="Img/andisah2.jpeg">
+              <img src="Img/Andisah3.jpg">
+              <img src="Img/Andre1.jpeg">
+              <img src="Img/Mempelai P.jpg">
+              <img src="Img/Mempelaiw.jpg">
+              
+            </div>
+          </div>
+          -->
+
+          <!-- Detail Nama Mempelai -->
+
+      <div class="section-bottom fade-up">
+
+  <!-- WANITA -->
+  <div class="couple">
+    <div class="photo">
+      <img src="img/Mempelaiw.jpeg" alt="Milea" style="width:100%;">
+    </div>
+
+    <h2 class="nickname">Isah</h2>
+    <h3 class="fullname">Durotul Muqodisah S.AP</h3>
+
+    <p class="desc">
+      Putri dari<br>
+      Bapak Muhtadi dan Ibu Sujiyah
+    </p>
+  </div>
+
+  <!-- ICON -->
+  <div class="love-icon">&</div>
+
+  <!-- PRIA -->
+  <div class="couple">
+    <div class="photo">
+      <img src="img/MempelaiP.jpg" alt="Dilan">
+    </div>
+
+    <h2 class="nickname">Andre</h2>
+    <h3 class="fullname">Andre Setiawan S.KOM</h3>
+
+    <p class="desc">
+      Putra dari<br>
+      Bapak Haryanto dan Ibu Sri Sumarmiyati
+    </p>
+  </div>
+
+</div>
+
+<!-- Tanggal dan Tempat Pernikahan Akad-->
+
+<div class="event-section fade-up">
+
+  <div class="event-header">
+    <h2>Wedding</h2>
+    <h5>Event</h5>
+  </div>
+  <div class="event-card fade-up">
+
+    <h3 class="event-title">Akad</h3>
+    <div class="divider">✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦</div>
+
+    <p class="day">SABTU</p>
+
+    <div class="date-row">
+      <span>JUNI</span>
+      <div class="date-box">06</div>
+      <span>2026</span>
+    </div>
+
+    <p class="time">⏰ 08.00 - 10.00</p>
+
+    <div class="event">
+      <span>Kediaman Mempelai Wanita</span>
+    </div>
+<div class="location">
+  📍 Jl. Bumi Bahagia VII ujung harapan no.42, 
+  Rt.003 RW.044 kel. Bahagia kec. Babelan kab. Bekasi
+</div>
+
+<a href="https://www.google.com/maps/place/Jl.+Bumi+Bahagia+VII+No.42,+Bahagia,+Kec.+Babelan,+Kabupaten+Bekasi,+Jawa+Barat+17610/@-6.1870561,107.0128205,17z/data=!3m1!4b1!4m6!3m5!1s0x2e698966cbaea04b:0x77215158d1f6235f!8m2!3d-6.1870561!4d107.0128205!16s%2Fg%2F11k5qr71fc?entry=ttu&g_ep=EgoyMDI2MDQwMS4wIKXMDSoASAFQAw%3D%3D" 
+   target="_blank" 
+   class="map-btn">
+   📍 GOOGLE MAPS
+</a>
+  </div>
+
+</div>
+
+<!-- Tanggal dan Tempat Pernikahan Resepsi-->
+
+<div class="event-section">
+
+  <div class="event-card">
+
+    <h3 class="event-title">Resepsi</h3>
+    <div class="divider">✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦</div>
+
+    <p class="day">SABTU</p>
+
+    <div class="date-row">
+      <span>JUNI</span>
+      <div class="date-box">06</div>
+      <span>2026</span>
+    </div>
+
+    <p class="time">⏰ 10.00 - Selesai</p>
+
+    <div class="event">
+      <span>Kediaman Mempelai Wanita</span>
+    </div>
+<div class="location">
+  📍 Jl. Bumi Bahagia VII ujung harapan no.42, 
+  Rt.003 RW.044 kel. Bahagia kec. Babelan kab. Bekasi
+</div>
+
+<a href="https://www.google.com/maps/place/Jl.+Bumi+Bahagia+VII+No.42,+Bahagia,+Kec.+Babelan,+Kabupaten+Bekasi,+Jawa+Barat+17610/@-6.1870561,107.0128205,17z/data=!3m1!4b1!4m6!3m5!1s0x2e698966cbaea04b:0x77215158d1f6235f!8m2!3d-6.1870561!4d107.0128205!16s%2Fg%2F11k5qr71fc?entry=ttu&g_ep=EgoyMDI2MDQwMS4wIKXMDSoASAFQAw%3D%3D" 
+   target="_blank" 
+   class="map-btn">
+   📍 GOOGLE MAPS
+</a>
+  </div>
+
+</div>
+
+<!-- Live Streaming -->
+<div class="live-section">
+  <div class="live-content">
+    <h2 class="live-title">Live Streaming</h2>
+    <p class="live-sub">Saksikan acara kami secara langsung di Instagram</p>
+
+    <a href="https://instagram.com/andre_isah" target="_blank" class="ig-btn">
+      📸 Instagram
+    </a>
+  </div>
+
+</div>
+
+
+<!-- Love Story -->
+
+<div class="love-story fade-up">
+
+  <h2 class="love-title">
+    <span></span>
+    Love Story
+    <span></span>
+  </h2>
+
+  <!-- IMAGE -->
+  <div class="love-img">
+    <img src="img/andre.png" alt="Love Story">
+  </div>
+
+  <!-- STORY 1 -->
+  <div class="story">
+    <h3>Awal Cerita</h3>
+    <p>
+      Kami sudah saling mengenal sejak tahun 2023 sebagai rekan kerja, meskipun di divisi yang berbeda.
+Pada Juni 2024, kami mulai mengenal satu sama lain lebih dalam hingga menyadari bahwa kami memiliki visi dan tujuan hidup yang sejalan.  
+    </p>
+  </div>
+
+  <!-- STORY 2 -->
+  <div class="story">
+    <h3>Lamaran</h3>
+    <p>
+      Setelah banyak pertimbangan dan memohon petunjuk kepada Allah SWT, kami memutuskan untuk melangkah lebih serius.
+Pada Mei 2025, kami meminta restu kepada kedua orang tua.
+Kemudian, pada 28 September 2025, kami melangsungkan khitbah sebagai bentuk keseriusan menuju pernikahan.
+    </p>
+  </div>
+
+  <!-- STORY 3 -->
+  <div class="story">
+    <h3>Pernikahan</h3>
+    <p>
+      InsyaAllah, kami akan melangsungkan pernikahan pada 06 Juni 2026 untuk menyempurnakan separuh agama.
+Semoga perjalanan ini selalu diberkahi dan dipenuhi sakinah, mawaddah, warahmah.
+    </p>
+  </div>
+
+</div>
+
+<div class="gallery-section fade-up">
+
+  <!-- TITLE -->
+  <h2 class="gallery-title">
+    <span></span>
+    Gallery
+  </h2>
+
+  <!-- VIDEO -->
+    <!--  
+  <div class="video-box">
+    <iframe 
+      src="img/Durotul Muqodisah.mp4" 
+      frameborder="0" 
+      allowfullscreen>
+    </iframe>
+  </div>
+-->
+
+  <!-- FOTO GRID -->
+  <div class="photo-grid">
+
+    <div class="photo-item">
+      <img src="img/Tunangan.jpeg">
+    </div>
+
+    <div class="photo-item">
+      <img src="img/andisah2.jpeg">
+    </div>
+
+    <div class="photo-item">
+      <img src="img/andisah4.jpeg">
+    </div>
+
+    <div class="photo-item">
+      <img src="img/Andre1.jpeg">
+    </div>
+    <div class="photo-item">
+      <img src="img/andisah1.jpeg">
+    </div>
+    <div class="photo-item">
+      <img src="img/tunangan2.jpeg">
+    </div>
+    <div class="photo-item">
+      <img src="img/tunangan3.jpeg">
+    </div>
+    </div>
+    </div>
+
+  <!-- ================= HADIAH ================= -->
+<!-- ================= RSVP ================= -->
+
+<div class="rsvp-section fade-up">
+
+  <p class="rsvp-sub">
+
+<div class="gift-section">
+
+
+  <h2 class="gift-title">Wedding Gift</h2>
+  <p class="gift-text">
+    Terima kasih atas doa & kasih Anda 💛
+  </p>
+
+  <button class="gift-btn" onclick="openGift()">
+  🎁 Kirim Hadiah 
+</button>
+
+
+</div>
+
+<!-- POPUP HADIAH -->
+<div id="giftPopup" class="gift-popup">
+
+  <div class="gift-box">
+
+    <span class="close-btn" onclick="closeGift()">x</span>
+
+    <h3>Wedding Gift</h3>
+
+
+  <!-- ATM 1 -->
+<div class="atm-card-modern">
+  <div class="bank">BCA</div>
+  <div class="name">DUROTUL MUQODISAH</div>
+  <div class="rekening" id="rek-bca">7635195690</div>
+  <button class="copy-btn-modern" onclick="copyRek('rek-bca')">
+    📋 Salin Rekening
+  </button>
+</div>
+
+<!-- ATM 2 -->
+<div class="atm-card-modern">
+  <div class="bank">BRI</div>
+  <div class="name">ANDRE SETIAWAN</div>
+  <div class="rekening" id="rek-bri">561301029578539</div>
+  <button class="copy-btn-modern" onclick="copyRek('rek-bri')">
+    📋 Salin Rekening
+  </button>
+</div>
+
+
+
+</div>
+<!-- POPUP HADIAH -->
+ 
+</div>
+</div>
+
+    <!-- ================= Kehadiran ================= -->
+    <!-- ================= RSVP ================= -->
+<div class="rsvp-section fade-up">
+
+  <h2>Konfirmasi Kehadiran</h2>
+  <p class="rsvp-sub">
+    Mohon kesediaannya untuk melakukan konfirmasi kehadiran.
+  </p>
+
+  <form id="formUcapan">
+
+  <input type="text" id="nama" placeholder="Nama" required>
+
+  <div class="form-row">
+    <select id="kehadiran">
+      <option>Hadir</option>
+      <option>Tidak Hadir</option>
+    </select>
+
+    <input type="number" id="jumlah" value="1">
+  </div>
+
+  <textarea id="pesan" placeholder="Ucapan & Doa..." required></textarea>
+
+  <!-- UBAH INI -->
+  <button type="submit">Kirim</button>
+
+</form>
+
+  <!-- LIST KOMENTAR -->
+
+  <div id="successMsg" style="display:none; color:green; text-align:center; margin-top:10px;">
+  ✅ Berhasil terkirim
+</div>
+  <div id="listUcapan" class="list-ucapan"></div>
+
+</div>
+
+
+
+
+
+<div class="footer-wedding fade-up">
+
+  <div class="footer-content">
+    
+    <p class="footer-text">
+      <br> 
+      Merupakan suatu kebahagiaan dan kehormatan bagi kami,
+      apabila Bapak/Ibu/Saudara/i berkenan hadir dan
+      memberikan doa restu kepada kedua mempelai.
+    </p>
+
+    <p class="footer-sub">The Wedding of</p>
+
+    <h2 class="footer-names">Isah & Andre</h2>
+
+  </div>
+
+</div>
+
+<!-- Batas Conten-->
+</div>
+
+
+
+    <!-- Batas Invitation Card-->
+  </div>
+<!-- Batas Container-->
+</div>
+
+
+
+
+  </div>
+
+
+
+<script src="js/script.js"> </script>
 </body>
 </html>
