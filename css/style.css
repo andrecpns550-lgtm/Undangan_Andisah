@@ -347,16 +347,37 @@ body {
   left: 110%;
 }
 
-/* Musik */
+/* Kotak tanggal */
 
 #musicBtn {
   position: fixed;
   top: 20px;
 
   left: 50%;
-  transform: translateX(140px); /* geser sesuai lebar card */
+  transform: translateX(127px); /* geser sesuai lebar card */
 
   z-index: 9999;
+
+  width: 48px;
+  height: 48px;
+
+  border-radius: 50%;
+  border: none;
+
+  background: rgba(0, 0, 0, 0.6); /* 🔥 lebih clean */
+  backdrop-filter: blur(6px);
+
+  color: #fff;
+  font-size: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+
+  transition: all 0.3s ease;
+
 }
 
 
