@@ -326,4 +326,23 @@ function copyRek(id){
   });
 }
 
+// ================= AUTO NAMA TAMU =================
+function getNamaTamu() {
+  const params = new URLSearchParams(window.location.search);
+  const nama = params.get("to");
+
+  if (nama) {
+    const decodedNama = decodeURIComponent(nama);
+
+    // isi ke elemen guest
+    const guestEl = document.querySelector(".guest");
+    if (guestEl) {
+      guestEl.innerText = decodedNama;
+    }
+  }
+}
+
+// jalankan
+getNamaTamu();
+
 
