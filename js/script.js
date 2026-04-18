@@ -1,65 +1,70 @@
 
-
 function openInvite() {
-      window.location.href = "home.html";
-}
+  document.getElementById("coverPage").style.display = "none";
+  document.getElementById("homePage").style.display = "block";
 
-// ================= MUSIK =================
-document.addEventListener("DOMContentLoaded", function () {
+  // trigger musik setelah klik (biar tidak kena blok autoplay)
   const music = document.getElementById("bgMusic");
   const btn = document.getElementById("musicBtn");
 
-  let isPlaying = false;
+  if (music) {
+    music.play().then(() => {
+      if (btn) btn.innerHTML = "⏸️";
+    }).catch(() => {
+      console.log("Autoplay diblokir");
+    });
+  }
+}
 
-  // paksa play lagi (karena sebelumnya sudah pernah play)
-  music.play().then(() => {
-    isPlaying = true;
-    btn.innerHTML = "⏸️";
-  }).catch(() => {
-    console.log("Autoplay diblokir");
-  });
+// ================= MUSIK =================
+
+document.addEventListener("DOMContentLoaded", function () {
+
+
+
+  // MUSIC
+  const music = document.getElementById("bgMusic");
+  const btn = document.getElementById("musicBtn");
 
   window.toggleMusic = function () {
-    if (isPlaying) {
-      music.pause();
-      btn.innerHTML = "▶️";
-    } else {
+    if (music.paused) {
       music.play();
       btn.innerHTML = "⏸️";
+    } else {
+      music.pause();
+      btn.innerHTML = "▶️";
     }
-    isPlaying = !isPlaying;
   };
-});
 
-
-
-// =================== GALLERY SLIDE ===================
-document.addEventListener("DOMContentLoaded", function () {
+  // GALLERY (AMAN)
   const track = document.querySelector(".gallery-track");
-  const images = track.querySelectorAll("img");
 
-  // clone semua gambar agar looping mulus
-  images.forEach(img => {
-    const clone = img.cloneNode(true);
-    track.appendChild(clone);
-  });
+  if (track) {
+    const images = track.querySelectorAll("img");
 
-  let speed = 1; // kecepatan pixel per frame
-  let position = 0;
+    images.forEach(img => {
+      const clone = img.cloneNode(true);
+      track.appendChild(clone);
+    });
 
-  function slideGallery() {
-    position += speed;
-    if (position >= track.scrollWidth / 2) { // reset looping
-      position = 0;
+    let speed = 1;
+    let position = 0;
+
+    function slideGallery() {
+      position += speed;
+      if (position >= track.scrollWidth / 2) {
+        position = 0;
+      }
+      track.style.transform = `translateX(-${position}px)`;
+      requestAnimationFrame(slideGallery);
     }
-    track.style.transform = `translateX(-${position}px)`;
-    requestAnimationFrame(slideGallery);
+
+    slideGallery();
   }
 
-  slideGallery();
+  // COUNTDOWN (biarkan seperti punya kamu)
+
 });
-
-
 
 // ================= Calender ================
 
@@ -287,6 +292,14 @@ fetch(URL_SCRIPT)
 /// ================= HADIAH =================
 
 function openGift() {
+  const popup = document.getElementById("giftPopup");
+  popup.style.display = "flex";
+  popup.style.opacity = "0";
+
+  setTimeout(() => {
+    popup.style.opacity = "1";
+  }, 10);
+
   document.getElementById("giftPopup").style.display = "flex";
   document.body.style.overflow = "hidden";
 }
@@ -314,12 +327,3 @@ function copyRek(id){
 }
 
 
-function openGift() {
-  const popup = document.getElementById("giftPopup");
-  popup.style.display = "flex";
-  popup.style.opacity = "0";
-
-  setTimeout(() => {
-    popup.style.opacity = "1";
-  }, 10);
-}
