@@ -331,13 +331,14 @@ function getNamaTamu() {
   const params = new URLSearchParams(window.location.search);
   const nama = params.get("to");
 
-  if (nama) {
-    const decodedNama = decodeURIComponent(nama);
+  const guestEl = document.querySelector(".guest");
 
-    // isi ke elemen guest
-    const guestEl = document.querySelector(".guest");
-    if (guestEl) {
-      guestEl.innerText = decodedNama;
+  if (guestEl) {
+    if (nama) {
+      const namaTamu = decodeURIComponent(nama);
+      guestEl.innerHTML = "Kepada Yth.<br>" + namaTamu + " & Partner";
+    } else {
+      guestEl.innerText = "Tamu Undangan";
     }
   }
 }
