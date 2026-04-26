@@ -271,20 +271,27 @@ fetch(URL_SCRIPT)
   })
   .catch(err => console.log("Load error:", err));
 
-  // ================= ANIMASI SCROLL =================
-  const elements = document.querySelectorAll(".fade-up");
 
-  function showOnScroll() {
-    const triggerBottom = window.innerHeight * 0.85;
 
-    elements.forEach(el => {
-      const boxTop = el.getBoundingClientRect().top;
+  // ================= ANIMASI SCROLL (GANTI YANG LAMA) =================
+const elements = document.querySelectorAll(".fade-up");
 
-      if (boxTop < triggerBottom) {
-        el.classList.add("show");
+if (elements.length) {
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+        observer.unobserve(entry.target); // biar cuma sekali
       }
     });
-  }
+  }, {
+    threshold: 0.15,
+    rootMargin: "0px 0px -50px 0px"
+  });
+
+  elements.forEach(el => observer.observe(el));
+}
+ 
 
   window.addEventListener("scroll", showOnScroll);
   showOnScroll();
@@ -342,7 +349,7 @@ function getNamaTamu() {
   if (guestEl) {
     if (nama) {
       const namaTamu = decodeURIComponent(nama);
-     guestEl.textContent = namaTamu + " & Partner";
+      guestEl.textContent = namaTamu + " & Partner";
     } else {
       guestEl.innerText = "Tamu Undangan";
     }
