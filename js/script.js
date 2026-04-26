@@ -342,7 +342,7 @@ function getNamaTamu() {
   if (guestEl) {
     if (nama) {
       const namaTamu = decodeURIComponent(nama);
-      guestEl.innerHTML = + namaTamu + " & Partner";
+     guestEl.textContent = namaTamu + " & Partner";
     } else {
       guestEl.innerText = "Tamu Undangan";
     }
