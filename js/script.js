@@ -202,6 +202,12 @@ if (form) {
       waktu: new Date().toLocaleString()
     };
 
+    // ⬇️ TAMBAHAN SAJA (ini inti solusi kamu)
+msg.innerHTML = "⏳ Mengirim data, mohon tunggu...";
+msg.style.color = "black";
+msg.style.display = "block";
+
+
     fetch(URL_SCRIPT, {
       method: "POST",
       mode: "no-cors",
